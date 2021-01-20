@@ -23,12 +23,16 @@ export default ProductListItem;
 
 const styles = StyleSheet.create({
   row: {
-    flex: 1,
     alignSelf: 'stretch',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderColor: 'grey',
+    borderWidth: 1
   },
   rowItem: {
-    flex: 1,
-    alignSelf: 'stretch'
+    width: 120,
+    height: 40,
+    display: 'flex',
+    alignItems: 'center'
   }
 });

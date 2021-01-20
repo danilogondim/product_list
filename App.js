@@ -70,7 +70,6 @@ export default class App extends React.Component {
         <Text style={styles.title}>Product List View</Text>
         <Text style={styles.subtitle}>{this.state.subtitle}</Text>
         <View style={styles.subContainer}>
-
           {!this.state.focus && <ProductList products={this.state.products} />}
           {this.state.focus && <ProductView />}
         </View>
