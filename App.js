@@ -61,7 +61,14 @@ export default class App extends React.Component {
       }
     ],
     subtitle: 'Product List',
-    focus: false
+    product: false
+  }
+
+  handleFocus = (product) => {
+    this.setState({ product: product })
+    if (product) {
+      this.setState({ subtitle: `Product Detail: ${product.productId}: ${product.productName}` })
+    }
   }
 
   render() {
@@ -70,8 +77,17 @@ export default class App extends React.Component {
         <Text style={styles.title}>Product List View</Text>
         <Text style={styles.subtitle}>{this.state.subtitle}</Text>
         <View style={styles.subContainer}>
-          {!this.state.focus && <ProductList products={this.state.products} />}
-          {this.state.focus && <ProductView />}
+
+          {!this.state.product && <ProductList
+            products={this.state.products}
+            handleFocus={this.handleFocus}
+          />}
+
+          {this.state.product && <ProductView
+            handleFocus={() => this.setState({ product: false })}
+            product={this.state.products.find(product => product.productId === this.state.product.productId)}
+          />}
+
         </View>
       </View>
     );

@@ -5,11 +5,11 @@ class ProductListItem extends React.Component {
 
   render() {
 
-    const { item: { productName, productCode, releaseDate, price, starRating } } = this.props;
+    const { product: { productName, productCode, releaseDate, price, starRating }, handleFocus } = this.props;
 
     return (
       <View style={styles.row} >
-        <Text style={styles.rowItem}>{productName}</Text>
+        <Text onPress={handleFocus} style={styles.link}>{productName}</Text>
         <Text style={styles.rowItem}>{productCode}</Text>
         <Text style={styles.rowItem}>{releaseDate}</Text>
         <Text style={styles.rowItem}>{price}</Text>
@@ -26,13 +26,20 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'center',
-    borderColor: 'grey',
-    borderWidth: 1
+    borderTopColor: 'grey',
+    borderTopWidth: 1
   },
   rowItem: {
     width: 120,
     height: 40,
     display: 'flex',
     alignItems: 'center'
+  },
+  link: {
+    width: 120,
+    height: 40,
+    display: 'flex',
+    alignItems: 'center',
+    color: 'blue'
   }
 });

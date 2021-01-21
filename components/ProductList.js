@@ -16,7 +16,7 @@ class ProductList extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, handleFocus } = this.props;
     const filterBy = this.state.filterBy.toLowerCase();
     const filter = this.state.filter.toLowerCase();
     const filterMap = {
@@ -52,7 +52,7 @@ class ProductList extends React.Component {
                 if (typeof product[filterMap[filterBy]] === 'number') {
                   return product[filterMap[filterBy]] === Number(filter)
                 } else
-                return product[filterMap[filterBy]].toLowerCase() === filter
+                  return product[filterMap[filterBy]].toLowerCase() === filter
               });
               // make sure the filter will only be applied if there is at least one product matching the criteria
               if (productFound) {
@@ -61,7 +61,7 @@ class ProductList extends React.Component {
             }
             // if there is no applicable filter or if there is no product matching the criteria, render all products
             return true;
-          }).map((item, index) => <ProductListItem key={item.productId} item={item} style={styles.row} />)}
+          }).map((product, index) => <ProductListItem key={product.productId} product={product} handleFocus={() => handleFocus(product)} style={styles.row} />)}
         </View>
       </>
 
