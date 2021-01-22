@@ -84,7 +84,7 @@ export default class App extends React.Component {
           />}
 
           {this.state.product && <ProductView
-            handleFocus={() => this.setState({ product: false })}
+            handleFocus={() => this.setState({ product: false, subtitle: 'Product List' })}
             product={this.state.products.find(product => product.productId === this.state.product.productId)}
           />}
 
@@ -100,6 +100,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    maxWidth: 600,
+    paddingTop: 30,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   title: {
     fontSize: 40
@@ -108,14 +114,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 15,
     borderColor: 'black',
-    width: '100vw',
+    alignSelf: "stretch",
     backgroundColor: 'lightblue',
     fontSize: 20
   },
   subContainer: {
     borderColor: 'black',
     borderWidth: 1,
-    width: '100vw',
-    height: 350
+    alignSelf: "stretch",
   }
 });

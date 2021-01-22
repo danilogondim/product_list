@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     marginLeft: 15,
-    width: 150
+    width: "35%"
   },
   table: {
     alignItems: 'center',
@@ -91,12 +91,12 @@ const styles = StyleSheet.create({
   header: {
     alignSelf: 'stretch',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     borderBottomColor: 'grey',
     borderBottomWidth: 1
   },
   headerItem: {
-    width: 120,
+    width: 60,
     height: 40,
     color: 'blue',
     fontWeight: 'bold',

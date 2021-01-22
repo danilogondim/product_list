@@ -25,19 +25,19 @@ const styles = StyleSheet.create({
   row: {
     alignSelf: 'stretch',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     borderTopColor: 'grey',
     borderTopWidth: 1
   },
   rowItem: {
-    width: 120,
-    height: 40,
+    width: 60,
+    height: 55,
     display: 'flex',
     alignItems: 'center'
   },
   link: {
-    width: 120,
-    height: 40,
+    width: 60,
+    height: 55,
     display: 'flex',
     alignItems: 'center',
     color: 'blue'

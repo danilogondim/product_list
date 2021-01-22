@@ -8,36 +8,37 @@ export default class ProductView extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.main}>
-          <View>
-            <View>
-              <Text>Name:</Text>
-              <Text>{productName}</Text>
+          <View style={styles.infoContainer}>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>Name: </Text>
+              <Text style={styles.infoItem}>{productName}</Text>
             </View>
-            <View>
-              <Text>Code:</Text>
-              <Text>{productCode}</Text>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>Code: </Text>
+              <Text style={styles.infoItem}>{productCode}</Text>
             </View>
-            <View>
-              <Text>Description:</Text>
-              <Text>{description}</Text>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>Description: </Text>
+              <Text style={styles.infoItem}>{description}</Text>
             </View>
-            <View>
-              <Text>Availability:</Text>
-              <Text>{releaseDate}</Text>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>Availability: </Text>
+              <Text style={styles.infoItem}>{releaseDate}</Text>
             </View>
-            <View>
-              <Text>Price:</Text>
-              <Text>{price}</Text>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>Price: </Text>
+              <Text style={styles.infoItem}>{price}</Text>
             </View>
-            <View>
-              <Text>5 star rating:</Text>
-              <Text>{starRating}</Text>
+            <View style={styles.info}>
+              <Text style={styles.infoItem}>5 star rating: </Text>
+              <Text style={styles.infoItem}>{starRating}</Text>
             </View>
           </View>
-          <Image
-            style={styles.img}
-            source={{ uri: imageUrl }}
-          />
+            <Image
+              style={styles.img}
+              source={{ uri: imageUrl }}
+              resizeMode="contain"
+            />
         </View>
         <View style={styles.footer}>
           <TouchableOpacity onPress={handleFocus} style={styles.button}>
@@ -53,25 +54,32 @@ export default class ProductView extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%'
   },
   main: {
-    height: '80%',
-    backgroundColor: 'grey'
-
+    flexDirection: 'row',
+  },
+  infoContainer: {
+    padding: 20,
+    width: '60%'
+  },
+  info: {
+    flexDirection: 'row',
+  },
+  infoItem: {
+    width: '50%'
   },
   img: {
-    width: 60,
-    height: 60
+    width: '30%',
   },
   footer: {
-    height: '20%',
-    backgroundColor: 'salmon'
+    height: 70,
+    backgroundColor: 'lightgrey',
+    justifyContent: 'center'
   },
   button: {
     backgroundColor: 'white',
     padding: 10,
-    margin: 15,
+    marginLeft: 15,
     height: 40,
     width: 80,
     borderColor: 'black',
