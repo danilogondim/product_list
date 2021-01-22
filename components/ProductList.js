@@ -33,6 +33,7 @@ class ProductList extends React.Component {
         <View style={styles.filterContainer}>
           <Text style={styles.text}>Filter by: </Text>
           <TextInput onChangeText={this.handleFilterBy} style={styles.input}></TextInput>
+          <Text style={styles.text}>Value: </Text>
           <TextInput onChangeText={this.handleFilter} style={styles.input}></TextInput>
         </View>
 
@@ -61,7 +62,7 @@ class ProductList extends React.Component {
             }
             // if there is no applicable filter or if there is no product matching the criteria, render all products
             return true;
-          }).map((product, index) => <ProductListItem key={product.productId} product={product} handleFocus={() => handleFocus(product)} style={styles.row} />)}
+          }).map(product => <ProductListItem key={product.productId} product={product} handleFocus={() => handleFocus(product)} style={styles.row} />)}
         </View>
       </>
 
@@ -75,13 +76,17 @@ const styles = StyleSheet.create({
   filterContainer: {
     flexDirection: 'row',
     alignSelf: 'flex-start',
-    padding: 15
+    padding: 15,
+    width: '100%'
+  },
+  text: {
+    marginRight: 10
   },
   input: {
     borderColor: 'black',
     borderWidth: 1,
-    marginLeft: 15,
-    width: "35%"
+    marginRight: 10,
+    width: '30%'
   },
   table: {
     alignItems: 'center',
