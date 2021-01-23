@@ -34,11 +34,11 @@ export default class ProductView extends React.Component {
               <Text style={styles.infoItem}>{starRating}</Text>
             </View>
           </View>
-            <Image
-              style={styles.img}
-              source={{ uri: imageUrl }}
-              resizeMode="contain"
-            />
+          <Image
+            style={styles.img}
+            source={{ uri: imageUrl }}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.footer}>
           <TouchableOpacity onPress={handleFocus} style={styles.button}>
@@ -54,9 +54,11 @@ export default class ProductView extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    height: '100%'
   },
   main: {
     flexDirection: 'row',
+    height: '80%'
   },
   infoContainer: {
     padding: 20,
@@ -64,6 +66,7 @@ const styles = StyleSheet.create({
   },
   info: {
     flexDirection: 'row',
+    marginBottom: 5
   },
   infoItem: {
     width: '50%'
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
     width: '30%',
   },
   footer: {
-    height: 70,
+    height: '20%',
     backgroundColor: 'lightgrey',
     justifyContent: 'center'
   },
