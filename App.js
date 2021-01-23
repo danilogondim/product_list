@@ -122,5 +122,6 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     alignSelf: "stretch",
+    height: 300
   }
 });
